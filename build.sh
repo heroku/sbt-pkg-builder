@@ -4,6 +4,12 @@ DRY_RUN=$3
 EXCLUDES=$2
 ARCHIVE_NAME=$1
 
+if [ -z "$ARCHIVE_NAME" ]; then
+  echo "Archive name must be provided as first arg!"
+  echo "You probably just want to run one of the build-*.sh scripts..."
+  exit 1
+fi
+
 if [ -d target ] ; then
   rm -rf target 
 fi

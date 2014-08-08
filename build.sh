@@ -1,5 +1,9 @@
 #!/bin/bash
 
+DRY_RUN=$3
+EXCLUDES=$2
+ARCHIVE_NAME=$1
+
 if [ -d target ] ; then
   rm -rf target 
 fi
@@ -23,11 +27,20 @@ SBT_OPTS="$SBT_OPTS -Dsbt.ivy.home=$BUILD_DIR/.ivy2 -Divy.default.ivy.user.dir=$
 
 PROJECT_DIRS=`ls $HOME_DIR/projects`
 for DIR in $PROJECT_DIRS; do
-  cp -r $HOME_DIR/projects/$DIR $DIR
-  cd $DIR
-  java $SBT_OPTS -jar $BUILD_DIR/$SBT_JAR update
-  cd -
-  rm -rf $DIR
+  if [[ $DIR =~ $EXCLUDES ]]; then
+    echo "Skipping $DIR"
+  else
+    echo "Resolving $DIR"
+    cp -r $HOME_DIR/projects/$DIR $DIR
+    cd $DIR
+    if [ -z "$DRY_RUN" ]; then
+      java $SBT_OPTS -jar $BUILD_DIR/$SBT_JAR update
+    fi
+    cd - >/dev/null 2>&1
+    rm -rf $DIR
+  fi
 done
 
-tar cvfz sbt-cache.tar.gz .ivy2 .sbt
+tar cfz $ARCHIVE_NAME.tar.gz .ivy2 .sbt 
+
+echo "done"

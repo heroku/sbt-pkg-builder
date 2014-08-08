@@ -1,4 +1,4 @@
-name := """starter-project"""
+name := """sample-play2.3.0_2.11"""
 
 version := "1.0-SNAPSHOT"
 

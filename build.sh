@@ -10,7 +10,6 @@ BUILD_DIR=$HOME_DIR/target
 mkdir $BUILD_DIR
 cd $BUILD_DIR
 
-
 mkdir -p .ivy2/cache .sbt
 
 SBT_JAR="sbt-launch.jar"
@@ -30,3 +29,5 @@ for DIR in $PROJECT_DIRS; do
   cd -
   rm -rf $DIR
 done
+
+tar cvfz maven.tar.gz .ivy2 .sbt

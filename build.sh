@@ -30,4 +30,4 @@ for DIR in $PROJECT_DIRS; do
   rm -rf $DIR
 done
 
-tar cvfz maven.tar.gz .ivy2 .sbt
+tar cvfz sbt-cache.tar.gz .ivy2 .sbt

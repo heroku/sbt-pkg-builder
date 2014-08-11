@@ -14,7 +14,7 @@ if [ -d target ] ; then
   rm -rf target 
 fi
 
-HOME_DIR=$(cd $(dirname $0); pwd) 
+HOME_DIR=$(cd $(dirname $0)/..; pwd) 
 BUILD_DIR=$HOME_DIR/target
 
 mkdir $BUILD_DIR
@@ -48,5 +48,6 @@ for DIR in $PROJECT_DIRS; do
 done
 
 tar cfz $ARCHIVE_NAME.tar.gz .ivy2 .sbt 
+mv $ARCHIVE_NAME.tar.gz $HOME_DIR
 
 echo "done"

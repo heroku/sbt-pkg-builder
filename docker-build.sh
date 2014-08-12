@@ -4,6 +4,7 @@ rm sbt-*cache.tar.gz
 
 docker build --rm -t heroku/sbt-pkg-builder .
 
+docker rm sbt-pkg-builder
 docker run --name="sbt-pkg-builder" -it heroku/sbt-pkg-builder
 
 CONTAINER_ID=`docker ps -a | grep sbt-pkg-builder | awk '{print $1}'`

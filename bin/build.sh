@@ -1,6 +1,7 @@
 #!/bin/bash
 
-DRY_RUN=$3
+DRY_RUN=$4
+INCLUDES=$3
 EXCLUDES=$2
 ARCHIVE_NAME=$1
 
@@ -35,7 +36,7 @@ PROJECT_DIRS=`ls $HOME_DIR/projects`
 for DIR in $PROJECT_DIRS; do
   if [[ $DIR =~ $EXCLUDES ]]; then
     echo "Skipping $DIR"
-  else
+  elif [[ $DIR =~ $INCLUDES ]]; then
     echo "Resolving $DIR"
     cp -r $HOME_DIR/projects/$DIR $DIR
     cd $DIR
@@ -44,6 +45,8 @@ for DIR in $PROJECT_DIRS; do
     fi
     cd - >/dev/null 2>&1
     rm -rf $DIR
+  else
+    echo "Skipping $DIR"
   fi
 done
 

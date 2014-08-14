@@ -14,5 +14,5 @@ docker cp $CONTAINER_ID:/app/sbt-cache-play-2.3_2.11.tar.gz .
 docker cp $CONTAINER_ID:/app/sbt-cache-play-2.2_2.10.tar.gz .
 docker cp $CONTAINER_ID:/app/sbt-cache-play-2.1_2.10.tar.gz .
 docker cp $CONTAINER_ID:/app/sbt-cache-play-2.0_2.9.tar.gz .
-docker cp $CONTAINER_ID:/app/sbt-cache-base-0.13_2.10.tar.gz .
-docker cp $CONTAINER_ID:/app/sbt-cache-base-0.13_2.11.tar.gz .
+
+docker cp $CONTAINER_ID:/app/sbt-cache-base.tar.gz .

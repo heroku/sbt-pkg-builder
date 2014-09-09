@@ -1,0 +1,10 @@
+language: bash
+
+install: apt-get install s3cmd
+
+script: travis-build.sh
+
+env:
+  global:
+  - secure: ct/Qaii2lNoH+31qNdbM+zOib+A8OSXx2LHTVRQ12HLvyZilOYzLUwOhE019XzfDyWlh01dY8sbHTqyIjos9YfoCN76llD9dDoYd3uGrZiAXmGwr9z682VoSueZeVLQClIoRuUxe5BtBpaLN75VLhQ9AS98525BRkMUwZU291j0=
+  - secure: IMyKiR07KVY/EvsNUQ3d1zRKRkUp3k83f0HbJtY8QcBa7SOTcV69R/6mhdnzRz5h7xhlP/lyPGvdlLC0oJxL4f1hsdFI3Ofb90H02tYOm9Ngoerd6/kmD5N2OPH1ZPbQxIvP8K2ckaTy/sBBcMG7IfxfBwuM8gU54McuPyRVPQE=

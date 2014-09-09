@@ -17,5 +17,5 @@ for SCALA_VERSION in $SCALA_VERSIONS; do
   done
 
   SCALA_MAJOR_VERSION=$(expr "${SCALA_VERSION}" : "\(2.1[0-9]\)")
-  $BIN_DIR/build.sh "$GEN_DIR" "sbt-cache-play_2.3_${SCALA_MAJOR_VERSION}" $@
+  $BIN_DIR/build.sh "$GEN_DIR" "sbt-cache-play-2.3_${SCALA_MAJOR_VERSION}" $@
 done

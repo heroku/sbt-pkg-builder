@@ -14,4 +14,4 @@ for SBT_VERSION in $SBT_VERSIONS; do
     create_play21_app "$GEN_DIR" "$PLAY_VERSION" "$SCALA_VERSION" "$SBT_VERSION"
   done
 done
-$BIN_DIR/build.sh "$GEN_DIR" "sbt-cache-play_2.1_${SCALA_VERSION}" $@
+$BIN_DIR/build.sh "$GEN_DIR" "sbt-cache-play-2.1_${SCALA_VERSION}" $@

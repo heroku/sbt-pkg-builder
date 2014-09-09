@@ -45,7 +45,8 @@ done
 
 rm -rf $PROJECTS_DIR/*
 
+mkdir -p $HOME_DIR/builds
 tar cfz $ARCHIVE_NAME.tar.gz .ivy2 .sbt
-mv $ARCHIVE_NAME.tar.gz $HOME_DIR
+mv $ARCHIVE_NAME.tar.gz $HOME_DIR/builds
 
 echo "done"

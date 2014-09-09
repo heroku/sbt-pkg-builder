@@ -13,4 +13,4 @@ deploy:
   on:
     repo: heroku/sbt-pkg-builder
 
-script: ./travis-build.sh
+script: ./bin/build-play23.sh

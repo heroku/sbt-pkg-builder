@@ -1,10 +1,16 @@
 language: bash
 
-install: sudo apt-get install s3cmd
+deploy:
+  provider: s3
+  access_key_id: AKIAIY4RILRJUD5FSKHQ
+  secret_access_key:
+    secure: Oe6jVLHfYwdqMeFu2nqMhxvlLgTd345liyottT3C4ROeeL/e67hbYul75f/2FT8/vrILsClu9F24uBTr2O8i0ZilFztVGspVh5Al8oXQ62tlkC4WG/vEWPsUm+/3RJkoTaXyjB0yBSxot0dJs8ADv9aYnMiVOZSZCCA/4fCL3iw=
+  bucket: lang-jvm
+  local-dir: builds
+  upload-dir: sbt/stage
+  acl: !ruby/string:HighLine::String |-
+    cHVibGljX3JlYWQ=
+  on:
+    repo: heroku/sbt-pkg-builder
 
 script: ./travis-build.sh
-
-env:
-  global:
-  - secure: ct/Qaii2lNoH+31qNdbM+zOib+A8OSXx2LHTVRQ12HLvyZilOYzLUwOhE019XzfDyWlh01dY8sbHTqyIjos9YfoCN76llD9dDoYd3uGrZiAXmGwr9z682VoSueZeVLQClIoRuUxe5BtBpaLN75VLhQ9AS98525BRkMUwZU291j0=
-  - secure: IMyKiR07KVY/EvsNUQ3d1zRKRkUp3k83f0HbJtY8QcBa7SOTcV69R/6mhdnzRz5h7xhlP/lyPGvdlLC0oJxL4f1hsdFI3Ofb90H02tYOm9Ngoerd6/kmD5N2OPH1ZPbQxIvP8K2ckaTy/sBBcMG7IfxfBwuM8gU54McuPyRVPQE=

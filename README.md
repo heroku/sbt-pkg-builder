@@ -7,14 +7,14 @@ To build all the tarballs, run this:
 ./docker-build.sh
 ```
 
-This will create some very big files in root directory of the project.
+This will create some very big files in the root directory of the project.
 
-You can also build each tarball outside of Docker, but be care on OS X 
+You can also build each tarball outside of Docker, but be careful on OS X
 because you'll get some `.DS_Store` all up in your tarball.
 
 ```
-./bin/build-play.sh
+./bin/build-all.sh
 ```
 
-These tarballs are then upload to `heroku-jvm-langpack-scala.s3.amazonaws.com`
+These tarballs are then upload to `s3://lang-jvm.s3.amazonaws.com/sbt`
 where they are used by the heroku-buildpack-scala.

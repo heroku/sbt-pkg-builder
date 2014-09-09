@@ -1,14 +1,6 @@
 #!/bin/bash
 
 ./bin/build-play23.sh
-./bin/build-sbt.sh
-
-echo "Uploading sbt-cache-base.tar.gz..."
-s3cmd put --acl-public \
-  --access_key="$AWS_ACCESS_KEY" \
-  --secret_key="$AWS_SECRET_KEY" \
-  sbt-cache-base.tar.gz \
-  s3://lang-jvm.s3.amazonaws.com/sbt/stage/
 
 SCALA_VERSIONS="2.9 2.10 2.11"
 for SCALA_VERSION in $SCALA_VERSIONS; do

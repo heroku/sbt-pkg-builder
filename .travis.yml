@@ -7,6 +7,6 @@ deploy:
     secure: AMTiEGB6Gtn/Gu3Vk3p4q1ZXuyTrnhHWfRNvx5vdsBDa7CXN6OiRcNnjGFfxOGBa0hpDq3cr/cHiBhsUb6BeBI7Uyx9NI2PFhqbtGwJlh4k/R2ONYsdQgvIEfcMU4gJK4ESbX3iVJWcHJO+w4bZ3atmDKk/VIyqm89E6GtgT74g=
   bucket: lang-jvm
   local-dir: builds
-  acl: public_read
+  acl: bucket_owner_full_control
   on:
     repo: heroku/sbt-pkg-builder

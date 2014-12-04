@@ -46,7 +46,12 @@ done
 rm -rf $PROJECTS_DIR/*
 
 mkdir -p $HOME_DIR/builds
+
+echo "Packing .ivy2 and .sbt dirs into $ARCHIVE_NAME.tar.gz ..."
 tar cfz $ARCHIVE_NAME.tar.gz .ivy2 .sbt
+
+echo "Moving $ARCHIVE_NAME.tar.gz ..."
 mv $ARCHIVE_NAME.tar.gz $HOME_DIR/builds
+ls -al $HOME_DIR/builds
 
 echo "done"

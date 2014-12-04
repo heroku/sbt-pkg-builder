@@ -8,6 +8,9 @@ deploy:
   bucket: lang-jvm
   skip_cleanup: true
   local-dir: builds
-  acl: bucket_owner_full_control
+  upload-dir: sbt/stage
+  acl:
+  - bucket_owner_full_control
+  - public_read
   on:
     repo: heroku/sbt-pkg-builder

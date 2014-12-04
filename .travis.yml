@@ -1,16 +1,12 @@
 language: bash
-
+script: "./bin/build-play23.sh"
 deploy:
   provider: s3
   access_key_id: AKIAIY4RILRJUD5FSKHQ
   secret_access_key:
-    secure: Oe6jVLHfYwdqMeFu2nqMhxvlLgTd345liyottT3C4ROeeL/e67hbYul75f/2FT8/vrILsClu9F24uBTr2O8i0ZilFztVGspVh5Al8oXQ62tlkC4WG/vEWPsUm+/3RJkoTaXyjB0yBSxot0dJs8ADv9aYnMiVOZSZCCA/4fCL3iw=
+    secure: AMTiEGB6Gtn/Gu3Vk3p4q1ZXuyTrnhHWfRNvx5vdsBDa7CXN6OiRcNnjGFfxOGBa0hpDq3cr/cHiBhsUb6BeBI7Uyx9NI2PFhqbtGwJlh4k/R2ONYsdQgvIEfcMU4gJK4ESbX3iVJWcHJO+w4bZ3atmDKk/VIyqm89E6GtgT74g=
   bucket: lang-jvm
   local-dir: builds
-  upload-dir: sbt/stage
-  acl: !ruby/string:HighLine::String |-
-    cHVibGljX3JlYWQ=
+  acl: public_read
   on:
     repo: heroku/sbt-pkg-builder
-
-script: ./bin/build-play23.sh

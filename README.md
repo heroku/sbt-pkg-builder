@@ -1,3 +1,5 @@
+# sbt Package Builder [![Build Status](https://travis-ci.org/heroku/sbt-pkg-builder.svg?branch=master)](https://travis-ci.org/heroku/sbt-pkg-builder)
+
 This project is used to build various tarballs of pre-seeded SBT and Ivy dependency
 caches (so you don't have to download the Internet everytime you build a new app).
 

@@ -34,7 +34,7 @@ object ApplicationBuild extends Build {
 }
 EOF
 
-  cat > $playDir/project/plugings.sbt <<EOF
+  cat > $playDir/project/plugins.sbt <<EOF
 resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"
 
 addSbtPlugin("play" % "sbt-plugin" % "${playVersion}")
@@ -77,7 +77,7 @@ object ApplicationBuild extends Build {
 }
 EOF
 
-  cat > $playDir/project/plugings.sbt <<EOF
+  cat > $playDir/project/plugins.sbt <<EOF
 resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"
 
 addSbtPlugin("play" % "sbt-plugin" % "${playVersion}")
@@ -111,7 +111,7 @@ libraryDependencies ++= Seq(
 play.Project.playScalaSettings
 EOF
 
-  cat > $playDir/project/plugings.sbt <<EOF
+  cat > $playDir/project/plugins.sbt <<EOF
 resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"
 
 addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "${playVersion}")
@@ -148,9 +148,51 @@ libraryDependencies ++= Seq(
 )
 EOF
 
-  cat > $playDir/project/plugings.sbt <<EOF
+  cat > $playDir/project/plugins.sbt <<EOF
 resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"
 
 addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "${playVersion}")
 EOF
 }
+
+create_play24_app() {
+  local genDir=$1
+  local playVersion=$2
+  local scalaVersion=$3
+  local sbtVersion=$4
+
+  playDir=$genDir/play${playVersion}_${scalaVersion}_${sbtVersion}
+  mkdir -p $playDir/project
+
+  cat > $playDir/project/build.properties <<EOF
+sbt.version=${sbtVersion}
+EOF
+
+  cat > $playDir/build.sbt <<EOF
+name := """sample-play"""
+
+version := "1.0-SNAPSHOT"
+
+lazy val root = (project in file(".")).enablePlugins(PlayScala)
+
+scalaVersion := "${scalaVersion}"
+
+resolvers += "Scalaz Bintray Repo" at "http://dl.bintray.com/scalaz/releases"
+
+libraryDependencies ++= Seq(
+  javaJdbc,
+  javaEbean,
+  cache,
+  javaWs
+)
+EOF
+
+  cat > $playDir/project/plugins.sbt <<EOF
+resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"
+
+resolvers += "Typesafe Snapshots" at "https://repo.typesafe.com/typesafe/snapshots/"
+
+addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "${playVersion}")
+EOF
+}
+

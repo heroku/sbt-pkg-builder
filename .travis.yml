@@ -1,7 +1,7 @@
 language: bash
 script: "./bin/build-play23.sh"
 deploy:
-  provider: codedeploy
+  provider: s3
   access_key_id: AKIAIY4RILRJUD5FSKHQ
   secret_access_key:
     secure: FQ0eOr+HRv72aHyKpblEvJhSdNBtvyXWLFppnpT3i8SGIMVxBALohQeXonEQzncy79HzaF8H9ycBD8vmPg5DAnzFYmE/zURaVclyS6uGP5n+28H4HNucTtf9VnxiJ1WYOzpyy1bC64Q3oQ5/2Dc0FXSNKOo0oXZYxQEpIwhojCc=

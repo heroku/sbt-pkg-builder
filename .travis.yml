@@ -1,11 +1,12 @@
 language: bash
 script: "./bin/build-play23.sh"
 deploy:
-  provider: s3
+  provider: codedeploy
   access_key_id: AKIAIY4RILRJUD5FSKHQ
   secret_access_key:
-    secure: AMTiEGB6Gtn/Gu3Vk3p4q1ZXuyTrnhHWfRNvx5vdsBDa7CXN6OiRcNnjGFfxOGBa0hpDq3cr/cHiBhsUb6BeBI7Uyx9NI2PFhqbtGwJlh4k/R2ONYsdQgvIEfcMU4gJK4ESbX3iVJWcHJO+w4bZ3atmDKk/VIyqm89E6GtgT74g=
+    secure: FQ0eOr+HRv72aHyKpblEvJhSdNBtvyXWLFppnpT3i8SGIMVxBALohQeXonEQzncy79HzaF8H9ycBD8vmPg5DAnzFYmE/zURaVclyS6uGP5n+28H4HNucTtf9VnxiJ1WYOzpyy1bC64Q3oQ5/2Dc0FXSNKOo0oXZYxQEpIwhojCc=
   bucket: lang-jvm
+  application: sbt-pkg-builder
   skip_cleanup: true
   local-dir: builds
   upload-dir: sbt/stage

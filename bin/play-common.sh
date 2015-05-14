@@ -3,7 +3,7 @@
 create_play20_app() {
   local genDir=$1
   local playVersion=$2
-  local scalaVersion="0.11.3"
+  local sbtVersion="0.11.3"
   local sbtVersion="2.9"
 
   playDir=$genDir/play${playVersion}_${scalaVersion}_${sbtVersion}
@@ -177,22 +177,16 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 scalaVersion := "${scalaVersion}"
 
-resolvers += "Scalaz Bintray Repo" at "http://dl.bintray.com/scalaz/releases"
-
 libraryDependencies ++= Seq(
-  javaJdbc,
-  javaEbean,
+  jdbc,
   cache,
-  javaWs
+  ws
 )
 EOF
 
   cat > $playDir/project/plugins.sbt <<EOF
 resolvers += "Typesafe repository" at "http://repo.typesafe.com/typesafe/releases/"
 
-resolvers += "Typesafe Snapshots" at "https://repo.typesafe.com/typesafe/snapshots/"
-
 addSbtPlugin("com.typesafe.play" % "sbt-plugin" % "${playVersion}")
 EOF
 }
-

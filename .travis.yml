@@ -1,5 +1,5 @@
 language: java
-jdk: i
+jdk:
   - oraclejdk8
 script: "./bin/build-play24.sh"
 deploy:

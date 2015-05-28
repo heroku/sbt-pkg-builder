@@ -1,5 +1,5 @@
 language: bash
-script: "./bin/build-sbt.sh"
+script: "./bin/build-play24.sh"
 deploy:
   provider: s3
   access_key_id: AKIAIOAGFQJ5IYBXVYWQ

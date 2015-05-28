@@ -1,5 +1,6 @@
-language: bash
-jdk: oraclejdk8
+language: java
+jdk: i
+  - oraclejdk8
 script: "./bin/build-play24.sh"
 deploy:
   provider: s3

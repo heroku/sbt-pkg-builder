@@ -14,3 +14,4 @@ deploy:
   acl: public_read
   on:
     repo: heroku/sbt-pkg-builder
+sudo: false

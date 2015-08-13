@@ -23,7 +23,7 @@ cd $BUILD_DIR
 mkdir -p .ivy2/cache .sbt
 
 SBT_JAR="sbt-launch.jar"
-SBT_URL="http://typesafe.artifactoryonline.com/typesafe/ivy-releases/org.scala-sbt/sbt-launch/0.13.5/$SBT_JAR"
+SBT_URL="http://dl.bintray.com/typesafe/ivy-releases/org.scala-sbt/sbt-launch/0.13.9/$SBT_JAR"
 curl -O --location $SBT_URL
 
 SBT_OPTS="-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled"

@@ -4,6 +4,8 @@ jdk:
 script: "./bin/build-play24.sh"
 deploy:
   provider: s3
+  edge:
+    branch: ha-test-s3-aws-sdk-v2
   access_key_id: AKIAIOAGFQJ5IYBXVYWQ
   secret_access_key:
     secure: c7IJGIl2EsgBbbl5VIBr3yO1Rn1/aiCDO41JNP+vmu9J9vVbWc6/HFb95Ya/iRFcjJ+wCw2qAbDRuaky7CYTic8gMLQngF9vMPZ1ppmQsXXg+BftmTON6C+lR9W/59li69ME3gW1z0RJ9yHvVmkTdR43+JA/lwLu1f/HIWK9iAQ=

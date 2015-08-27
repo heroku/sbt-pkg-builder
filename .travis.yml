@@ -15,5 +15,6 @@ deploy:
   upload-dir: sbt/stage
   acl: public_read
   on:
+    all_branches: true
     repo: heroku/sbt-pkg-builder
 sudo: false

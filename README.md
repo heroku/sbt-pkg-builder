@@ -18,5 +18,5 @@ because you'll get some `.DS_Store` all up in your tarball.
 ./bin/build-all.sh
 ```
 
-These tarballs are then upload to `s3://lang-jvm.s3.amazonaws.com/sbt`
+These tarballs are then upload to `https://lang-jvm.s3.amazonaws.com/sbt`
 where they are used by the heroku-buildpack-scala.
